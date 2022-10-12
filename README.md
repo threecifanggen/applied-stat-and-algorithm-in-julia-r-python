@@ -11,6 +11,7 @@
 3. `statsmodels`
 4. `pandas`
 5. `numpy`
+6. `pyro`
 
 ## 参考文献
 
