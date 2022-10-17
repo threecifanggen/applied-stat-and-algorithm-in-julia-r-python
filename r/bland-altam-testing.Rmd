@@ -1,0 +1,59 @@
+---
+title: "Bland-Altman一致性检验"
+subtitle: "——EDV的例子"
+author: "3gee"
+date: "2022-10-17"
+output:
+  prettydoc::html_pretty:
+    theme: leonids
+    highlight: github
+---
+
+```{css, echo=FALSE}
+p, h1, h2, h3, h4, h5 {
+  font-family:"Microsoft YaHei",微软雅黑;
+}
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(survival)
+library(survminer)
+library(tidyverse)
+library(ggplot2)
+```
+
+## Loading Data
+
+```{r}
+df <- readxl::read_excel("../datasets/两种方式测量16名EDV值.xlsx", sheet=1)
+df
+```
+
+
+```{r}
+plot.ggbland <- function(df, alpha = 0.05) {
+  z_score = qnorm(1 - alpha/2)
+  temp_df <- df %>%
+    mutate(diff = `mEDV` - `sEDV`) %>%
+    mutate(avg = (`mEDV`+ `sEDV`)/ 2)
+  mean_diff <- mean(temp_df$diff)
+  lower <- mean_diff - z_score * sd(temp_df$diff)
+  upper <- mean_diff + z_score * sd(temp_df$diff)
+  ggplot(temp_df, aes(x = avg, y = diff)) +
+    geom_point(size=2) +
+    geom_hline(yintercept = mean_diff) +
+    geom_hline(yintercept = lower, color = "red", linetype="dashed") +
+    geom_hline(yintercept = upper, color = "red", linetype="dashed") +
+    geom_hline(yintercept = 0, color = "grey", linetype="dashed") +
+    ggtitle("Bland-Altman Plot") +
+    ylab("Difference Between Instruments") +
+    xlab("Average")+theme_bw()
+}
+
+plot.ggbland(df)
+
+```
+
+
