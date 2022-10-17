@@ -4,6 +4,8 @@
 
 ## 依赖
 
+### `Python`
+
 `Python`使用的模块包括：
 
 1. `sympy`
@@ -12,6 +14,15 @@
 4. `pandas`
 5. `numpy`
 6. `pyro`
+
+
+### `R`
+
+`R`使用的额模块包括:
+
+1. `tidyverse`：用于数据处理
+2. `predtydoc`: 用于输出美化的`RMarkdown`文件
+3. `pROC`：ROC/AUC计算
 
 ## 参考文献
 

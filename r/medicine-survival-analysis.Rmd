@@ -1,0 +1,26 @@
+---
+title: "医学用生存分析"
+author: "3gee"
+date: "2022-10-17"
+output:
+  prettydoc::html_pretty:
+    theme: leonids
+    highlight: github
+---
+
+```{css, echo=FALSE}
+p, h1, h2, h3, h4, h5 {
+  font-family:"Microsoft YaHei",微软雅黑;
+}
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 简介
+
+本`RMarkdown`用来展示如何用`R`实现**生存分析**。
+
+
