@@ -1,5 +1,6 @@
 ---
-title: "医学用生存分析"
+title: "医学用生存分析(单因素)"
+subtitle: "——肿瘤数据例子"
 author: "3gee"
 date: "2022-10-17"
 output:
@@ -17,10 +18,65 @@ p, h1, h2, h3, h4, h5 {
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+Sys.setlocale("LC_ALL", "CHS")
+library(survival)
+library(survminer)
+library(tidyverse)
 ```
 
-## 简介
+## 简介 | Introduction
 
 本`RMarkdown`用来展示如何用`R`实现**生存分析**。
 
+This `RMarkdown` file shows how to use `R` to analysis survival data.
 
+
+## 读入数据和整理 | Data Loading and Transfering
+
+```{r}
+df <- xlsx::read.xlsx("../datasets/肿瘤大小生存数据.xlsx", 1)
+
+test_df <- df %>%
+  mutate(is_deleted = `删失`) %>%
+  mutate(group = ifelse(`肿瘤大小` == '小于3cm', 0, 1)) %>%
+  mutate(month = `生存月数`)
+
+test_df
+```
+
+## 建立模型 | Design a Survival Model
+
+```{r}
+m <- survfit(Surv(month, is_deleted) ~ group, data=test_df)
+m
+``` 
+```{r}
+plot(m)
+```
+```{r}
+ggsurvplot(m,surv.median.line = "hv",)
+```
+
+The survival chance is 1.0 at time zero (or 100 percent of the participants are alive).
+
+At time 20, the chances of survival for group=1 are about 0.50 (or 50 percent) and 0.85 (or 85 percent) for group=0.
+
+The median survival time for group=1 is 20 days and for group=0 is 40 days, indicating that those who has small tumor size(less then 3cm) has a better survival rate than those has large tumor size.
+
+
+```{r}
+summary(m)$table
+```
+
+### LogRank测试 | LogRank Testing
+
+LogRank Testing is used to check the significance of difference between two survival model.
+
+
+```{r}
+survdiff(Surv(month, is_deleted) ~ group, data=test_df)
+```
+
+The Chi-Squared test statistic is 7.4 with 1 degree of freedom and the corresponding p-value is 0.007. Since this p-value is less than 0.05, we reject the null hypothesis.
+
+In other words, we have sufficient evidence to say that there is a statistically significant difference in survival between the two groups.
