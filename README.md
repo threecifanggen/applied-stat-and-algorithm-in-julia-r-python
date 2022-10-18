@@ -23,9 +23,13 @@
 1. 计算试验数量： `python/pytools/exp_design.py`
 
 
-### 3. 生物信息学
+## 3. 生物信息学
 
-### 4. 路线规划
+### 3.1 `biopython`使用
+
+1. [`biopython`基本操作](./notebooks/%E5%BA%8F%E5%88%97%E6%95%B0%E6%8D%AE/%E5%BA%8F%E5%88%97%E6%95%B0%E6%8D%AE%E5%9F%BA%E6%9C%AC%E5%A4%84%E7%90%86.ipynb)
+
+## 4. 路线规划
 
 ## 依赖
 
