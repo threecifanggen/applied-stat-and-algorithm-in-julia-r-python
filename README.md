@@ -12,7 +12,7 @@
 1. [ROC分析 | `Python`实现](./notebooks/诊断实验统计分析/准确性检验_roc.ipynb)
 2. [Bland-Altman一致性分析 | `R`实现](./r/bland-altam-testing.Rmd)
 
-#### 1. 2生存分析
+#### 1.2 生存分析
 
 1. [单因素生存分析 | `R`实现](./r/medicine-survival-analysis.Rmd)
 
@@ -21,6 +21,11 @@
 ### 2.1 试验设计
 
 1. 计算试验数量： `python/pytools/exp_design.py`
+
+
+### 3. 生物信息学
+
+### 4. 路线规划
 
 ## 依赖
 
@@ -49,4 +54,5 @@
 
 * 潘发明, 编. *医用统计方法及其SPSS软件实现*. 第3版. 合肥: 中国科学技术大学出版社, 2018.
 * 周登远, 编. *临床医学研究中的统计分析和图形表达实例详解*. 第2版. 北京: 北京科学技术出版社, 2017.
+* [意]Allegra Via, [意]Kristian Rother和[意]Anna Tramontano. *Python生物信息学数据管理*. 翻译 卢宏超, 陈一情和李绍娟. 生命科学与信息技术丛书. 北京: 电子工业出版社, 2017.
 * Janet L. Peacock和Phiilip J. Peacock. *Oxford Handbook of Medical Statistics*. Oxford ; New York: Oxford University Press, 2011.
