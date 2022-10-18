@@ -5,13 +5,22 @@
 
 ## 实现的内容
 
+### 1. 医学特有
 
-- [ ] 描述性统计
-- [ ] 假设检验
-- [ ] 生存分析
-- [ ] 诊断实验分析
-- [x] AB测试/实验设计
+#### 1.1 诊断试验统计分析
 
+1. [ROC分析 | `Python`实现](./notebooks/诊断实验统计分析/准确性检验_roc.ipynb)
+2. [Bland-Altman一致性分析 | `R`实现](./r/bland-altam-testing.Rmd)
+
+#### 1. 2生存分析
+
+1. [单因素生存分析 | `R`实现](./r/medicine-survival-analysis.Rmd)
+
+### 2. 基本统计学
+
+### 2.1 试验设计
+
+1. 计算试验数量： `python/pytools/exp_design.py`
 
 ## 依赖
 
