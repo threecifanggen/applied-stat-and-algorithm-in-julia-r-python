@@ -11,57 +11,6 @@
 5. [供应链](./doc/supply-chain.md)
 6. [电力系统相关](./doc/power-system.md)
 
-
-## 实现的内容
-
-### 1. 医学特有
-
-#### 1.1 诊断试验统计分析
-
-
-
-#### 1.2 生存分析
-
-1. [单因素生存分析 | `R`实现](./r/medicine-survival-analysis.Rmd)
-
-### 2. 基本统计学
-
-### 2.1 试验设计
-
-1. 计算试验数量： `python/pytools/exp_design.py`
-
-
-## 3. 生物信息学
-
-### 3.1 `biopython`使用
-
-1. [`biopython`基本操作](./notebooks/%E5%BA%8F%E5%88%97%E6%95%B0%E6%8D%AE/%E5%BA%8F%E5%88%97%E6%95%B0%E6%8D%AE%E5%9F%BA%E6%9C%AC%E5%A4%84%E7%90%86.ipynb)
-
-## 4. 路线规划
-
-## 依赖
-
-### `Python`
-
-`Python`使用的模块包括：
-
-1. `sympy`
-2. `scipy`
-3. `statsmodels`
-4. `pandas`
-5. `numpy`
-6. `pyro`
-
-
-### `R`
-
-`R`使用的额模块包括:
-
-1. `tidyverse`：用于数据处理
-2. `predtydoc`: 用于输出美化的`RMarkdown`文件
-3. `pROC`：ROC/AUC计算
-4. `survival`/`surminer`: 用于生存分析。
-
 ## 参考文献
 
 * 潘发明, 编. *医用统计方法及其SPSS软件实现*. 第3版. 合肥: 中国科学技术大学出版社, 2018.
