@@ -1,6 +1,15 @@
-# applied-stat-in-jupyter
+# Data Talks
 
-使用`R`、`Python`、`Julia`应用统计学解决实际问题的例子。
+本项目试图总结常用的各个行业基本常用的统计学和算法，试图用数学、数据、算法解决实际问题。目标人群是各类行业从业者、准备毕业的相关专业学生、参与或准备数学建模竞赛等相关人士。所有代码基本上使用`Python`/`R`实现，少部分`Julia`实现。部分较为复杂或者带有行业知识的内容可能直接调用已经维护的相关包。
+
+## 具体分类
+
+1. [基本统计学](./doc/basic-stats.md)
+2. [医学与生物统计学](./doc/med-stats.md)
+3. [生物信息学](./doc/bio-info.md)
+4. [路线规划](./doc/route-planning.md)
+5. [供应链](./doc/supply-chain.md)
+6. [电力系统相关](./doc/power-system.md)
 
 
 ## 实现的内容
@@ -9,8 +18,7 @@
 
 #### 1.1 诊断试验统计分析
 
-1. [ROC分析 | `Python`实现](./notebooks/诊断实验统计分析/准确性检验_roc.ipynb)
-2. [Bland-Altman一致性分析 | `R`实现](./r/bland-altam-testing.Rmd)
+
 
 #### 1.2 生存分析
 
