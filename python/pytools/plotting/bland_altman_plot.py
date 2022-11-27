@@ -7,10 +7,17 @@ from typing import List
 import pandas as pd
 import scipy.stats as st
 
-from plotly.offline import iplot
 import plotly.graph_objects as go
-from plotnine import *
+from plotnine import (
+    ggplot,
+    geom_point,
+    geom_hline,
+    ggtitle,
+    xlab, ylab,
+    theme_bw
+)
 
+# pylint: disable=C0103
 def plot_bland_altman(x, y, alpha: float = 0.05, backend: str = "plotnine") -> ggplot | go.Figure:
     """绘制Bland-Altman图
 
@@ -31,7 +38,7 @@ def plot_bland_altman(x, y, alpha: float = 0.05, backend: str = "plotnine") -> g
     mean_diff = temp_df['diff'].mean()
     lower = mean_diff - z_score * temp_df['diff'].std()
     upper = mean_diff + z_score * temp_df['diff'].std()
-    
+
     if backend == "plotly":
         fig = go.Figure(
             data = [

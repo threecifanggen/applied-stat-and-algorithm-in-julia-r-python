@@ -4,6 +4,7 @@
 from scipy.stats import kendalltau, spearmanr, pearsonr
 import pandas as pd
 
+# pylint: disable=C0103
 def correlation_summary(x, y) -> pd.DataFrame:
     """相关性总列
 
